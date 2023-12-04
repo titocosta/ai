@@ -35,7 +35,7 @@ class Predictor(BasePredictor):
         top_k: int = Input(description="Top K", default=50),
     ) -> ConcatenateIterator[str]:
         """Run a single prediction on the model"""
-        streamer = transformers.TextIteratorStreamer(self.tokenizer, skip_prompt=True, timeout=20.0)
+        streamer = transformers.TextIteratorStreamer(self.tokenizer, skip_prompt=True, timeout=20.0, skip_special_tokens=True)
         input_ids = self.tokenizer(prompt_template.format(prompt=prompt), return_tensors="pt").input_ids.to(self.device)
 
         with torch.inference_mode():
