@@ -28,7 +28,8 @@ class Predictor(BasePredictor):
     def predict(
         self,
         prompt: str = Input(description="Prompt"),
-        prompt_template: str = Input(description="Prompt template", default="GPT4 Correct User: {prompt}<|end_of_turn|>GPT4 Correct Assistant:"),
+        prompt_template: str = Input(description="Prompt template", default=PROMPT_TEMPLATE),
+        system_message: str = Input(description="System message", default="You are a helpful AI assistant trained in the medical domain"),
         max_new_tokens: int = Input(description="The maximum number of tokens the model should generate as output.", default=512),
         temperature: float = Input(description="Model temperature", default=0.2),
         top_p: float = Input(description="Top P", default=0.95),
