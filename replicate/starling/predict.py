@@ -7,16 +7,6 @@ import torch
 from threading import Thread
 
 MODEL_NAME = "berkeley-nest/Starling-LM-7B-alpha"
-# MODEL_NAME = "epfl-llm/meditron-7b"
-# MODEL_NAME = "epfl-llm/meditron-70b"
-
-PROMPT_TEMPLATE="""
-<|im_start|>system
-{system_message}<|im_end|>
-<|im_start|>question
-{prompt}<|im_end|>
-<|im_start|>answer
-"""
 
 class Predictor(BasePredictor):
     def setup(self) -> None:
