@@ -6,8 +6,7 @@ import transformers
 import torch
 from threading import Thread
 
-MODEL_NAME = "berkeley-nest/Starling-LM-7B-alpha"
-# MODEL_NAME = "epfl-llm/meditron-7b"
+MODEL_NAME = "epfl-llm/meditron-7b"
 # MODEL_NAME = "epfl-llm/meditron-70b"
 
 PROMPT_TEMPLATE="""
