@@ -8,8 +8,7 @@ from threading import Thread
 
 MODEL_NAME = "argilla/notus-7b-v1"
 
-PROMPT_TEMPLATE_2="""
-<|system|>
+PROMPT_TEMPLATE_2="""<|system|>
 {system_message}</s>
 <|user|>
 {prompt}</s>
